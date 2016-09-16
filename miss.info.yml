@@ -1,0 +1,27 @@
+name: Miss
+type: theme
+description: For beginning of site and theme development. As a initial starting point for Drupal development. Theme features RESPONSIVE design with Bootstrap (CDN). Theme is develop by Shivcharan Patil(Shiv). To customize this theme or create/develop entirely new theme as per your requirements contact me at shiv@shiv.work or visit me at <a href="http://itapplication.net" target="_blank">itApplication.net</a> or <a href="mailto:shivcharan@itapplication.net?Subject=Theme%20development" target="_blank">Send Mail</a>.
+# core: 8.x
+libraries:
+  - miss/bootstrap
+  - miss/globalstyle
+#  - beginning/font-awesome
+# remove hash symbol(hashtag) to uncommentout to add font-awesome library into theme.
+regions:
+  header: Header
+  primary_menu: Primary menu
+  secondary_menu: Secondary Menu
+  help: Help
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  highlighted: Highlighted
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  footer: Footer
+
+# Information added by Drupal.org packaging script on 2016-07-08
+version: '8.x-2.12'
+core: '8.x'
+project: 'miss'
+datestamp: 1467944061

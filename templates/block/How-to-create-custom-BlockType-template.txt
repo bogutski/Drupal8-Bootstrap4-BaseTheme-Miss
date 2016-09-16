@@ -1,0 +1,2 @@
+"Block Type" like 'content type' template
+Create "Block Type" through Drupal 8's interface through this link admin/structure/block/block-content/types and http://localhost/drupal/1Drupal8Doc/admin/structure/block/block-content/types/add while creating "Block Type" take care of using name without space. Machine name should be without space.
