@@ -14,4 +14,9 @@
  * @see template_preprocess_menu_local_task()
  */
 #}
-<li {% if is_active %}{{ attributes.addClass('active') }}{% else %}{{ attributes }}{% endif %}>{{ link }}</li>
+<li {{ attributes.addClass('nav-item') }}>
+    {% if is_active %}
+    {% else %}
+    {% endif %}
+    {{ link }}
+</li>

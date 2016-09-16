@@ -1,0 +1,15 @@
+front:
+  label: Bootstrap Front
+  category: Custom Layouts
+  path: templates/front
+  icon: front.png
+  template: front
+  regions:
+    top:
+      label: Top
+    sidebar_left:
+      label: Sidebar Left
+    cta:
+      label: CTA
+    sidebar_right:
+      label: Sidebar Right

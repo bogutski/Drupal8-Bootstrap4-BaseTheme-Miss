@@ -1,0 +1,68 @@
+//@import 'https://fonts.googleapis.com/css?family=Lato:400,900';
+
+@font-face {
+  font-family: Lato;
+  font-weight: 900;
+  src: url(../fonts/Lato/Lato-Black.ttf);
+}
+
+@font-face {
+  font-family: Lato;
+  font-weight: 400;
+  src: url(../fonts/Lato/Lato-Regular.ttf);
+}
+
+$color1: #ff3366 !default;
+
+body {
+  border-top: 4px solid $color1;
+  border-bottom: 4px solid $color1;
+  padding-bottom: 3rem;
+  font-family: 'Lato', sans-serif;
+
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 5rem;
+
+  .lined {
+    color: $color1;
+    border-bottom: 7px solid;
+  }
+}
+
+#edit-field-date-birth-wrapper {
+  .js-form-type-select {
+    width: 33%;
+    float: left;
+  }
+}
+
+#edit-field-photo-ajax-wrapper {
+  .description {
+    display: none;
+  }
+}
+
+.block-region-cta {
+  font-size: 1.5rem;
+}
+
+.block-region-sidebar-right {
+
+  .field--type-string {
+    label {
+      display: none;
+    }
+  }
+
+  summary {
+    display: none;
+  }
+
+  .form-control {
+    border: 2px solid rgba(0, 0, 0, 0.15);
+    font-size: 1.5rem;
+  }
+}

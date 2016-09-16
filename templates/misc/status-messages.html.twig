@@ -22,24 +22,34 @@
  */
 #}
 {% for type, messages in message_list %}
-  <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
-    {% if type == 'error' %}
-      <div role="alert">
+  {%
+  set classes = [
+  'alert',
+  'alert-dismissible',
+  'fade',
+  'in',
+  type == 'status' ? 'alert-success',
+  type == 'warning' ? 'alert-warning',
+  type == 'error' ? 'alert-danger',
+  ]
+  %}
+
+  <div role="alert" aria-label="{{ status_headings[type] }}" {{ attributes|without('role', 'aria-label').addClass(classes) }}>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+      <span class="sr-only">Close</span>
+    </button>
+    {% if status_headings[type] %}
+      <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
     {% endif %}
-      {% if status_headings[type] %}
-        <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
-      {% endif %}
-      {% if messages|length > 1 %}
-        <ul>
-          {% for message in messages %}
-            <li>{{ message }}</li>
-          {% endfor %}
-        </ul>
-      {% else %}
-        {{ messages|first }}
-      {% endif %}
-    {% if type == 'error' %}
-      </div>
+    {% if messages|length > 1 %}
+      <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      {{ messages|first }}
     {% endif %}
   </div>
 {% endfor %}

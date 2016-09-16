@@ -3,6 +3,7 @@ type: theme
 description: For beginning of site and theme development. As a initial starting point for Drupal development. Theme features RESPONSIVE design with Bootstrap (CDN). Theme is develop by Shivcharan Patil(Shiv). To customize this theme or create/develop entirely new theme as per your requirements contact me at shiv@shiv.work or visit me at <a href="http://itapplication.net" target="_blank">itApplication.net</a> or <a href="mailto:shivcharan@itapplication.net?Subject=Theme%20development" target="_blank">Send Mail</a>.
 # core: 8.x
 libraries:
+  - miss/tether
   - miss/bootstrap
   - miss/globalstyle
 #  - beginning/font-awesome

@@ -18,14 +18,20 @@
   {%- if title -%}
     <summary{{ summary_attributes }}>{{ title }}</summary>
   {%- endif -%}
-
-  {% if errors %}
-    <div>
-      {{ errors }}
-    </div>
-  {% endif %}
-
-  {{ description }}
-  {{ children }}
-  {{ value }}
+  <div class="details-wrapper">
+    {% if errors %}
+      <div class="alert alert-danger" role="alert">
+        <strong>{{ errors }}</strong>
+      </div>
+    {% endif %}
+    {%- if description -%}
+      <small class="details-description text-muted">{{ description }}</small>
+    {%- endif -%}
+    {%- if children -%}
+      {{ children }}
+    {%- endif -%}
+    {%- if value -%}
+      {{ value }}
+    {%- endif -%}
+  </div>
 </details>

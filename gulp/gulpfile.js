@@ -12,13 +12,13 @@ var gulp = require('gulp'),
 //  sourcemaps = require('gulp-sourcemaps')
 
 
-// task
+// task JS
 /*gulp.task('js', function () {
- gulp.src(getPaths('forAll', 'js')) // path to your files
- .pipe(concat('forAll.min.js'))
- .pipe(uglify())
- .pipe(gulp.dest(bu + 'build/js'));
- });*/
+    gulp.src(getPaths('forAll', 'js')) // path to your files
+        .pipe(concat('forAll.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(bu + 'build/js'));
+});*/
 
 gulp.task('watch', function () {
     gulp.watch('../**/*.scss', ['scss']);
@@ -27,9 +27,10 @@ gulp.task('watch', function () {
 // Путь от этого файла к публичной дирктории
 var bootstrap = '../lib/bootstrap4/scss/bootstrap.scss'; // Base url
 var customCss = '../css/custom.scss'; // Base url
+var microrulesCss = '../css/microrules.scss'; //
 
 gulp.task('scss', function () {
-    return gulp.src([bootstrap, customCss])
+    return gulp.src([bootstrap, customCss, microrulesCss])
         .pipe(sass().on('error', sass.logError))
         .pipe(sass({outputStyle: 'compressed'}))
         // .pipe(minifyCss())
@@ -39,20 +40,5 @@ gulp.task('scss', function () {
         }))
         .pipe(gulp.dest('../css'));
 });
-
-// task
-gulp.task('css', function () {
-    gulp.src(getPaths('forAll', 'css')) // path to your file
-        .pipe(concat('forAll.min.css'))
-        .pipe(minifyCss())
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: false
-        }))
-        .pipe(gulp.dest(bu + 'build/css'));
-});
-
-//      bu + 'js/*.js',
-//      bu + 'js/*/*.js',
 
 gulp.task('default', ['watch']);

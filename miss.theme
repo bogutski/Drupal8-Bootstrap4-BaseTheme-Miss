@@ -8,38 +8,36 @@
 /**
  * Implements hook_preprocess_HOOK() for page templates.
  */
-function miss_preprocess_page(&$variables) {
-  // Add information about the number of sidebars.
-  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
-   $variables['contentwidth'] = 'col-md-5 col-md-push-4';
-   $variables['sidebarfw'] = 'col-md-4 col-md-pull-5';
-   $variables['sidebarsw'] = 'col-md-3';   
-  }
-  elseif (!empty($variables['page']['sidebar_first'])) {
-   $variables['contentwidth'] = 'col-md-8 col-md-push-4';
-   $variables['sidebarfw'] = 'col-md-4 col-md-pull-8';
-  }
-  elseif (!empty($variables['page']['sidebar_second'])) {
-   $variables['contentwidth'] = 'col-md-8';
-   $variables['sidebarsw'] = 'col-md-4';   
-  }
-  else {
-   $variables['contentwidth'] = 'col-md-12';
-  }
+function miss_preprocess_page(&$variables)
+{
+    // Add information about the number of sidebars.
+    if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+        $variables['contentwidth'] = 'col-md-5 col-md-push-4';
+        $variables['sidebarfw'] = 'col-md-4 col-md-pull-5';
+        $variables['sidebarsw'] = 'col-md-3';
+    } elseif (!empty($variables['page']['sidebar_first'])) {
+        $variables['contentwidth'] = 'col-md-8 col-md-push-4';
+        $variables['sidebarfw'] = 'col-md-4 col-md-pull-8';
+    } elseif (!empty($variables['page']['sidebar_second'])) {
+        $variables['contentwidth'] = 'col-md-8';
+        $variables['sidebarsw'] = 'col-md-4';
+    } else {
+        $variables['contentwidth'] = 'col-md-12';
+    }
 
 }
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter() for form templates.
  */
-function miss_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+function miss_theme_suggestions_block_alter(array &$suggestions, array $variables)
+{
+    $block = $variables['elements'];
+    $blockType = $block['#configuration']['provider'];
 
-  $block = $variables['elements'];
-  $blockType = $block['#configuration']['provider'];
-  
-  if ($blockType == "block_content") {
-    $bundle = $block['content']['#block_content']->bundle();
-    $suggestions[] = 'block__' . $bundle;
-  }
+    if ($blockType == "block_content") {
+        $bundle = $block['content']['#block_content']->bundle();
+        $suggestions[] = 'block__' . $bundle;
+    }
 
 }

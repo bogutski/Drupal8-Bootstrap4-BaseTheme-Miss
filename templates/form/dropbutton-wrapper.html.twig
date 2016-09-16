@@ -7,8 +7,11 @@
  * - children: Contains the child elements of the dropbutton menu.
  *
  * @see template_preprocess()
+ * @see template_preprocess_dropbutton_wrapper()
  */
 #}
+{{ attach_library('bootstrap_barrio/dropbutton') }}
+
 {% if children %}
   {% spaceless %}
     <div class="dropbutton-wrapper">

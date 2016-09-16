@@ -1,0 +1,21 @@
+<div class="row">
+    {% if content.top %}
+        <div class="col-lg-12 pb4rem pt3rem">
+            {{ content.top }}
+        </div>
+    {% endif %}
+
+    {% if content.sidebar_left %}
+        <div class="col-lg-6">
+            {{ content.sidebar_left }}
+        </div>
+    {% endif %}
+
+    {% if content.sidebar_right %}
+        <div class="col-lg-6">
+            {{ content.cta }}
+            {{ content.sidebar_right }}
+        </div>
+    {% endif %}
+
+</div>
